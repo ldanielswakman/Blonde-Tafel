@@ -1,0 +1,1026 @@
+/*
+Theme Name: Blonde Tafel Amsterdam
+Theme URI:
+Author: L Daniel Swakman
+Author URI: http://www.ldaniel.eu/
+Description: De 'theme' voor De Blonde Tafel Amsterdam
+Version: 1.0
+License:
+License URI:
+Tags:
+Text Domain:
+*/
+
+
+/* ==================================================================================================================== */
+/* -------------------------------------   BLONDE TAFEL AMSTERDAM STYLESHEET   -----------------------------------------*/
+/* ==================================================================================================================== */
+
+/* --- CSS Resets --- */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,q,small,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;margin:0;padding:0}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object{display:block}a img{border:0}figure{position:relative}figure img{width:100%}
+
+
+@font-face {
+    font-family: 'MuseoSans500';
+    src: url('fonts/museosans_500-webfont.eot');
+    src: url('fonts/museosans_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/museosans_500-webfont.woff') format('woff'),
+         url('fonts/museosans_500-webfont.ttf') format('truetype'),
+         url('fonts/museosans_500-webfont.svg#MuseoSans500') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSans700';
+    src: url('fonts/museosans_700-webfont.eot');
+    src: url('fonts/museosans_700-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/museosans_700-webfont.woff') format('woff'),
+         url('fonts/museosans_700-webfont.ttf') format('truetype'),
+         url('fonts/museosans_700-webfont.svg#MuseoSans700') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSans900';
+    src: url('fonts/museosans_900-webfont.eot');
+    src: url('fonts/museosans_900-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/museosans_900-webfont.woff') format('woff'),
+         url('fonts/museosans_900-webfont.ttf') format('truetype'),
+         url('fonts/museosans_900-webfont.svg#MuseoSans900') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSlab';
+    src: url('fonts/museoslab_500-webfont.eot');
+    src: url('fonts/museoslab_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/museoslab_500-webfont.woff') format('woff'),
+         url('fonts/museoslab_500-webfont.ttf') format('truetype'),
+         url('fonts/museoslab_500-webfont.svg#MuseoSlab') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSlabItalic';
+    src: url('fonts/museo_slab_300italic-webfont.eot');
+    src: url('fonts/museo_slab_300italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/museo_slab_300italic-webfont.woff') format('woff'),
+         url('fonts/museo_slab_300italic-webfont.ttf') format('truetype'),
+         url('fonts/museo_slab_300italic-webfont.svg#MuseoSlabItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+/* --- Structure --- */
+body {
+    height: 100%;
+
+    font-family: MuseoSans500, sans-serif;
+    font-size: 16px;
+    color: #777;
+    -webkit-font-smoothing: antialiased;
+}
+
+#wrapper {
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.clearfloat {
+    clear: both;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.centre {
+    text-align: center;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    min-width: 100%;
+    background-color: #eee;
+    z-index: 10;
+}
+
+header .container, footer .container {
+    padding: 15px;
+}
+
+header .logo {
+    height: 52px;
+}
+
+nav ul {
+    display: inline-block;
+    float: right;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    display: block;
+    margin: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    font-family: MuseoSans500, Arial, sans-serif;
+    font-size: 0.75em;
+    letter-spacing: 0.1em;
+    color: #3e2f91;
+}
+
+nav a:hover {
+    border-bottom: 1px solid #3e2f91;
+}
+
+nav .menubutton {
+    position: absolute;
+    top: 0; right: 0;
+    display: none;
+    clear: both;
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+}
+
+nav .menubutton:hover {
+    border: none;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+
+
+section {
+    font-size: 1em;
+    line-height: 200%;
+    letter-spacing: 0.05em;
+    margin: 100px 0;
+}
+
+section p.single {
+    text-align: center;
+}
+
+section p.accent {
+    color: #3e2f91;
+    font-size: 1.4em;
+}
+
+.viewport-width-flag {
+    display: block;
+}
+
+
+
+
+
+
+
+/* --- Element Styles --- */
+
+::selection {
+    color: white;
+    background-color: #3e2f91;
+}
+
+h1 {
+    display: inline-block;
+    float: left;
+    margin: 0; padding: 0;
+    font-family: MuseoSans900, Arial, sans-serif;
+    text-transform: lowercase;
+    font-size: 0;
+    color: #eee;
+}
+
+h1 a {
+    font-size: 0;
+}
+
+h2 {
+    font-family: MuseoSans900, Arial, sans-serif;
+    font-size: 2em;
+    margin: 20px 0;
+    color: #3e2f91;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+h3 {
+    margin: 30px 0 0 0;
+    font-family: MuseoSans900, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #ccc;
+}
+
+h4 {
+    font-family: MuseoSans700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+a {
+    text-decoration: none;
+    color: #3e2f91;
+}
+
+p a:hover {
+    border-bottom: 1px solid #3e2f91;
+}
+
+.button-box {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 3em;
+    padding: 3px 12px;
+    border: 1px solid #3e2f91;
+
+    font-size: 0.75em;
+    font-family: MuseoSans500, Arial, sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.button-box:hover, a.button-box.highlight {
+    background-color: #3e2f91;
+    color: white;
+}
+
+.button-box.highlight:hover {
+    background-color: #7466c4;
+    border-color: #7466c4;
+    color: white;
+}
+.button-box:active {
+    left: 1px;
+    top: 1px;
+}
+.button-box.down:after {
+    content: "";
+    position: absolute; top: 100%; left: 0;
+    display: block; width: 0; height: 0;
+    margin-top: 1px; margin-left: -2px;
+    border-top: 10px solid #3e2f91;
+    border-left: 54px solid transparent;
+    border-right: 54px solid transparent;
+}
+.button-box.down:hover:after {
+    border-top-color: #7466c4;
+}
+
+
+
+
+/* --- Specific Section Styles --- */
+
+
+.single-header h2 {
+    padding-top: 10px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.single-header {
+    /*background-color: #e1debf;*/
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+.single-content {
+    margin-top: 30px;
+}
+
+.single-content img {
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.single-content .descr p {
+    margin-bottom: 1.46em;
+}
+
+#intro {
+    position: relative;
+    min-height: 650px;
+    margin-top: 0; /* 82px */
+
+    background-color: #3e2f91;
+    background: url('images/banner.jpg') no-repeat;
+    background-size: cover;
+    background-position: 0 82px;
+    overflow: hidden;
+}
+
+#intro h2 {
+    display: none;
+}
+
+#intro p.intro {
+    /*position: absolute; top: 50px; left: 0px; z-index: 2;
+    display: block; width: 900px; height: 900px;
+
+    -webkit-border-radius: 450px; -moz-border-radius: 450px; border-radius: 450px;
+    background-color: rgba(201,198,132,0.7);*/
+
+    position: relative;
+
+    margin-top: 200px;
+
+    font-family: MuseoSlab;
+    font-size: 1.7em;
+    color: #fff; /*#d6ce75*/
+    text-shadow: 1px 1px 30px rgba(0,0,0,1);
+    line-height: 150%;
+    font-weight: 500;
+
+    -webkit-columns: 1; -moz-columns: 1; columns: 1;
+
+    left: -1000px;
+    -webkit-transition: left 0.8s ease-out; -moz-transition: left 0.8s ease-out; transition: left 0.8s ease-out;
+}
+
+#intro p.intro i {
+    font-family: MuseoSlabItalic;
+    font-style: normal;
+    font-weight: 500;
+}
+
+#intro .readmore {
+    width: 108px;
+    margin-top: 50px;
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    position: relative; top: 1000px;
+    -webkit-transition: top 1s cubic-bezier(0.2,0,0.1,1); -moz-transition: top 1s cubic-bezier(0.2,0,0.1,1); transition: top 1s cubic-bezier(0.2,0,0.1,1);
+}
+
+#profiel {
+    margin-top: 50px;
+}
+
+#profiel p {
+    margin: 30px 0;
+}
+
+#profiel h2 {
+    padding-top: 50px;
+}
+
+
+.bestuur {
+    text-align: center;
+}
+
+.boardmember {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    padding: 20px;
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    -webkit-transition: left 0.8s ease-out; -moz-transition: left 0.8s ease-out; transition: left 0.8s ease-out;
+}
+
+.boardmember img {
+    width: 100%;
+}
+
+.boardmember i {
+    color: #ccc;
+}
+
+
+#agenda {
+    background-color: #d6ce75;
+    background-color: #e1debf;
+    background: url('images/banner_anderetafel.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+#agenda > .container {
+    text-align: center;
+}
+
+#agenda ul.container {
+    margin-top: 50px;
+}
+
+.event {
+    display: table-cell;
+    list-style: none;
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    padding: 0px;
+    text-align: center;
+    color: #777;
+}
+
+.event.fourcol:not(:last-child) {
+    border-right: 1px solid #3e2f91;
+    padding-right: 1.9%;
+    margin-right: 1.9%!important;
+}
+
+.event-link {
+    display: block;
+    padding: 20px;
+}
+
+.event-link:hover {
+    background-color: #ddd;
+}
+
+#agenda .event-link:hover {
+    background-color: #fff;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.calendar {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background: url('images/calendar.png');
+    font-family: MuseoSans500, Arial, sans-serif;
+    color: #3e2f91;
+    text-align: center;
+}
+
+.calendar.small {
+    background: url('images/calendar_dark_small.png');
+    width: 75px;
+    height: 75px;
+}
+
+.cal-date-dm {
+    display: block;
+    margin-top: 70px;
+    font-size: 2em;
+    z-index: 2;
+}
+
+.calendar.small .cal-date-dm {
+    font-size: 1em;
+    margin-top: 35px;
+    line-height: 75%;
+}
+
+.calendar.small .cal-date-y {
+    font-size: 0.75em;
+}
+
+.event .banner {
+    position: absolute; left: 10px; top: 50px;
+    display: inline-block;
+    width: 130px;
+    height: 90px;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.event h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    height: 3em;
+    color: #3e2f91;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.event .descr {
+    height: 5em;
+    font-size: 0.9em;
+    line-height: 160%;
+    color: #3e2f91; /*9e97c8*/
+}
+
+#agenda {
+    margin-bottom: 0;
+}
+
+#archief {
+    margin: 100px 0;
+    padding-top: 30px;
+}
+
+#archief ul li {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#archief ul li:nth-child(3n) {
+    margin-right: 0;
+    border-right: none;
+}
+
+
+
+
+#impressie {
+    margin-top: 0;
+    background-color: #3e2f91;
+}
+
+#impressie h2 {
+    display: none;
+}
+#impressie .flexslider-preloader {
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+}
+#impressie .flexslider {
+    position: relative;
+    display: none; /* default invisible, but is shown when flexslider js starts loading images */
+}
+
+#impressie .flex-viewport {
+    max-height: 625px;
+}
+
+#impressie ul.slides {
+    list-style: none;
+}
+
+#impressie ul.slides > li img {
+    width: 100%;
+}
+
+#impressie ul.slides > li {
+    -webkit-transition: opacity 0.3s; -moz-transition: opacity 0.3s; transition: opacity 0.3s;
+}
+
+/*#impressie ul.slides > li:not(.flex-active-slide) {
+    -webkit-opacity: 0.25;
+    -moz-opacity: 0.25;
+    opacity: 0.25;
+    -webkit-transition: opacity 0.3s; -moz-transition: opacity 0.3s; transition: opacity 0.3s;
+}*/
+
+#impressie ul.slides > li:hover {
+    cursor: pointer;
+}
+
+#impressie ol.flex-control-nav {
+    position: absolute;
+    top: 100%;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+#impressie ol.flex-control-nav li {
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+}
+
+#impressie ol.flex-control-nav li a {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+    background-color: #9e97c8;
+    margin-right: 20px;
+    font-size: 0;
+    cursor: pointer;
+}
+
+
+#impressie ol.flex-control-nav li a.flex-active {
+    background-color: #3e2f91;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
+    font-size: 0;
+}
+
+#impressie .flexslider .flex-direction-nav {
+    list-style: none;
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    width: 100%;
+    z-index: 10;
+    -webkit-transition: opacity 0.3s; -moz-transition: opacity 0.3s; transition: opacity 0.3s;
+}
+
+#impressie .flexslider .flex-prev,
+#impressie .flexslider .flex-next {
+    position: absolute; top: 0;
+    display: none; width: 50px; height: 50px;
+    -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px;
+    background-color: #fff;
+    padding-top: 10px;
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#impressie .flexslider .flex-prev:hover,
+#impressie .flexslider .flex-next:hover {
+    background-color: #d6ce75;
+}
+
+#impressie .flexslider:hover .flex-direction-nav {
+    opacity: 1;
+}
+
+#impressie .flexslider .flex-prev {
+    left: 25px;
+}
+
+#impressie .flexslider .flex-next {
+    right: 25px;
+}
+
+#impressie li:hover .descr {
+    display: block;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease;
+    }
+
+#impressie .descr {
+    position: absolute;
+    top: 585px;
+    display: block;
+    padding: 5px 15px;
+    opacity: 0.25;
+    text-align: center;
+    color: white;
+    font-size: 0.75em;
+    -webkit-transition: opacity 0.5s ease;
+    text-shadow: 1px 1px 10px rgba(0,0,0,1);
+}
+
+
+
+#lidmaatschap {
+    border-top: 1px solid #ccc; /*3e2f91*/
+    padding-top: 50px;
+}
+
+#lidmaatschap p {
+    margin-bottom: 1em;
+}
+
+#inschrijven {
+    background-color: #3e2f91;
+}
+
+#inschrijven h2 {
+    text-align: center;
+    color: #fff;
+}
+
+#inschrijven p.single {
+    color: #9e97c8;
+    margin-bottom: 30px;
+}
+
+#inschrijven form {
+    color: #fff;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    font-family: MuseoSans500, Arial, sans-serif;
+    font-size: 1.2em;
+    color: #3e2f91;
+    min-height: 25px;
+}
+
+input,textarea {
+    background-color: rgba(255,255,255,0.75); /* 9e97c8 */
+    border: none;
+    outline: none;
+    padding: 5px;
+    margin: 10px 0;
+}
+input:focus,textarea:focus {
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #3e2f91;
+}
+
+
+input[type="submit"] {
+    position: relative;
+    background-color: #fff;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-family: MuseoSans500, Arial, sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: #3e2f91;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    top: 1px; left: 1px;
+}
+
+.wpcf7-response-output,
+.wpcf7-not-valid-tip-no-ajax {
+    display: inline-block;
+    background-color: #e1debf;
+    padding: 10px 30px;
+    color: #666;
+    font-style: italic;
+}
+
+.wpcf7-response-output.wpcf7-display-none {
+    display: none;
+}
+
+#contact {
+    background-color: #eee;
+    background: url('images/fabric.png');
+    padding-bottom: 10px;
+    padding-top: 50px;
+    margin-bottom: 0;
+}
+
+#contact p {
+    margin-top: 30px;
+}
+
+#contact a {
+    position: relative;
+    margin: 5px 40px;
+}
+#contact a.button-joinright {
+  margin-right: 0;
+}
+#contact a.button-joinleft {
+  margin-left: -1px;
+}
+
+#contact a[class*="social"] {
+    margin-left: 40px;
+}
+
+#contact a[class*="social"]:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 100%;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #3e2f91;
+    background: url('images/socialicons.png') no-repeat;
+}
+
+#contact a[class$="linkedin"]:before {
+    background-position: 0px -40px;
+}
+
+#contact .colofon {
+    min-height: 100px;
+    margin-top: 30px;
+    padding-top: 30px;
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    border-top: 1px solid #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75em;
+}
+
+#contact .colofon a {
+    padding: 10px 20px;
+    color: #999;
+}
+
+#contact .colofon a:hover {
+    color: #3e2f91;
+}
+
+
+
+
+
+/* --- Responsive Grid Framework--- */
+.container .onecol {
+  width: 4.85%;
+}
+.container .twocol {
+  width: 13.45%;
+}
+.container .threecol {
+  width: 22.05%;
+}
+.container .fourcol {
+  width: 30.75%;
+}
+.container .fivecol {
+  width: 39.45%;
+}
+.container .sixcol {
+  width: 48%;
+}
+.container .sevencol {
+  width: 56.75%;
+}
+.container .eightcol {
+  width: 65.4%;
+}
+.container .ninecol {
+  width: 74.05%;
+}
+.container .tencol {
+  width: 82.7%;
+}
+.container .elevencol {
+  width: 91.35%;
+}
+.container .twelvecol {
+  width: 100%;
+  float: left;
+}
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol {
+  margin-right: 3.8%;
+  float: left;
+  min-height: 1px;
+}
+.onecol:last-child, .twocol:last-child, .threecol:last-child, .fourcol:last-child, .fivecol:last-child, .sixcol:last-child, .sevencol:last-child, .eightcol:last-child, .ninecol:last-child, .tencol:last-child, .elevencol:last-child, .last {
+  margin-right: 0;
+  clear: right;
+}
+
+
+
+/* ---------  media queries for smaller screens ---------- */
+
+/* --- possibly fixing IE10 header blow up issue --- */
+@media only screen and (min-width: 768px) {
+  header {
+    max-height: 150px;
+  }
+}
+/* ---------  Tablet size - landscape ---------- */
+@media only screen and (min-width: 0px) and (max-width: 1024px) {
+  #impressie .container {
+    max-width: 960px;
+    padding: 0;
+  }
+  .viewport-width-flag {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  header .container h1.fourcol {
+    width: 22.05%;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .container .onecol,
+  .container .twocol,
+  .container .threecol,
+  .container .fourcol,
+  .container .fivecol,
+  .container .sixcol,
+  .container .sevencol,
+  .container .eightcol,
+  .container .ninecol,
+  .container .tencol,
+  .container .elevencol {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    float: none;
+  }
+  p {
+    line-height: 1.7em;
+  }
+  nav ul {
+    display: none;
+    float: none;
+  }
+  nav ul li {
+    display: block;
+    width: 100%;
+    border-top: 1px solid #999;
+    margin-top: 10px;
+  }
+  nav ul li a:hover {
+    border: none;
+  }
+  nav .menubutton {
+    display: block;
+  }
+  #intro {
+    margin-bottom: 0;
+  }
+  #intro .readmore {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #intro p.intro {
+    margin-top: 100px;
+    font-size: 1.4em;
+    line-height: 1.6em;
+  }
+  #profiel {
+    margin-top: 0;
+  }
+  .boardmember.threecol {
+    display: inline-block !important;
+    max-width: 49%;
+    margin: 0;
+    vertical-align: top;
+    line-height: 1.4em;
+  }
+  .boardmember img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  #agenda ul.container {
+    padding: 0;
+  }
+  .event.fourcol:not(:last-child) {
+    border-bottom: 1px solid #3e2f91;
+    border-right: none;
+  }
+  li.event.fourcol {
+    padding: 0 !important;
+  }
+  .event.fourcol h3 {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 1.2em;
+  }
+  .event.fourcol .descr {
+    display: none;
+  }
+  .event.fourcol .calendar {
+    float: left;
+    margin-right: 10px;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+    background-size: cover;
+    line-height: 1.25em;
+  }
+  .event.fourcol .calendar .cal-date-dm {
+    margin-top: 25px;
+    font-size: 1em;
+  }
+  .event.fourcol .calendar .cal-date-y {
+    font-size: 0.8em;
+  }
+  #lidmaatschap {
+    margin-bottom: 0px;
+  }
+  #contact .button-box {
+    display: block;
+  }
+  #contact .button-box:before {
+    width: 35px !important;
+    height: 35px !important;
+    background-position-x: center !important;
+  }
+  #contact a.button-joinright,
+  #contact a.button-joinleft {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+}
