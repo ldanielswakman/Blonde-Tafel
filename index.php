@@ -7,7 +7,8 @@
 				'post_type' => 'page',
 				'post_parent' => '0',
 				'order' => 'ASC',
-				'orderby' => 'menu_order');
+				'orderby' => 'menu_order'
+			);
 			query_posts($args);
 
 		if ( have_posts() ) :

@@ -72,7 +72,8 @@
                     <?php $args = array(
 						'post_type' => 'page',
 						'order' => 'ASC',
-						'post_parent' => '0'
+						'post_parent' => '0',
+            'orderby' => 'menu_order'
 						);
 						query_posts($args);
                     
