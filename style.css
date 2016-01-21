@@ -77,6 +77,110 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
 
 
 
+/* --- Utilities --- */
+.u-mr30 {
+    margin-right: 30px !important;
+}
+.u-mt0 {
+    margin-top: 0 !important;
+}
+.u-mt20 {
+    margin-top: 20px !important;
+}
+.u-mt50 {
+    margin-top: 50px !important;
+}
+.u-mb20 {
+    margin-bottom: 20px !important;
+}
+.u-mb50 {
+    margin-bottom: 50px !important;
+}
+.u-mb0 {
+    margin-bottom: 0 !important;
+}
+.u-mr10 {
+    margin-right: 10px !important;
+}
+.u-pt100 {
+    padding-top: 100px !important;
+}
+.u-pb50 {
+    padding-bottom: 50px !important;
+}
+.u-block {
+    display: block !important;
+}
+.u-inlineblock {
+    display: inline-block !important;
+}
+.u-hide {
+    display: none !important;
+}
+.u-floatleft {
+    display: inline-block;
+    float: left;
+}
+.u-alignleft {
+    text-align: left !important;
+}
+.u-aligncenter {
+    text-align: center !important;
+}
+.u-alignright {
+    text-align: right !important;
+}
+.u-opacity70 {
+    opacity: 0.7;
+}
+.u-opacity50 {
+    opacity: 0.5;
+}
+.u-opacity30 {
+    opacity: 0.3;
+}
+.u-relative {
+    position: relative;
+}
+.u-pintopleft {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.u-pincover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+.u-z3 {
+    z-index: 3;
+}
+.u-z4 {
+    z-index: 4;
+}
+
+
+/* --- Color --- */
+.bg-btapurple {
+    background-color: #3e2f91;
+}
+.bg-btapurple p {
+    color: rgba(255, 255, 255, 0.7);
+}
+.bg-white {
+    background-color: #fff;
+}
+.c-btapurple {
+    color: #3e2f91;
+}
+.c-white {
+    color: #fff;
+}
+
 
 
 /* --- Structure --- */
@@ -88,7 +192,6 @@ body {
     color: #777;
     -webkit-font-smoothing: antialiased;
 }
-
 #wrapper {
     overflow-x: hidden;
 }
@@ -143,7 +246,8 @@ nav li {
 
 nav a {
     display: block;
-    margin: 20px;
+    margin: 20px 15px 17px;
+    padding-bottom: 3px;
     text-transform: uppercase;
     text-decoration: none;
     border-bottom: 1px solid transparent;
@@ -194,7 +298,13 @@ section p.accent {
 .viewport-width-flag {
     display: block;
 }
-
+section .section_expanded,
+section.expanded .expand_button {
+    display: none;
+}
+section.expanded .section_expanded {
+    display: block;
+}
 
 
 
@@ -245,6 +355,11 @@ h4 {
     font-family: MuseoSans700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+h2, h3, h4, p {
+    max-width: 46em;
+    margin: 0 auto;
 }
 
 a {
@@ -391,7 +506,8 @@ p a:hover {
 }
 
 #profiel p {
-    margin: 30px 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 #profiel h2 {
@@ -402,24 +518,130 @@ p a:hover {
 .bestuur {
     text-align: center;
 }
-
-.boardmember {
+ 
+.member {
     position: relative;
     display: inline-block;
     max-width: 100%;
     padding: 20px;
+    line-height: 1.4em;
+}
+.member:hover {
+}
+.member:focus {
+    outline: none;
+}
+.member img {
+    max-width: 100%;
+    max-height: 130px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+}
+.member:focus img {
+    border-color: rgba(62, 47, 145, 1);
+}
+.member .title {
+    color: #aaa;
+}
+.member .name {
+    display: inline-block;
+    margin-top: 5px;
+}
+.member .name,
+.member .title {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.member-board {
     -webkit-transition: left 0.8s ease-out; -moz-transition: left 0.8s ease-out; transition: left 0.8s ease-out;
 }
-
-.boardmember img {
-    width: 100%;
+.member-small {
+    text-align: left;
 }
-
-.boardmember i {
-    color: #ccc;
+.member-small img {
+    display: inline-block;
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
 }
-
+.member-small .name {
+    margin-top: 18px;
+}
+a.member img {
+    position: relative;
+    display: inline-block;
+}
+a.member:hover:before {
+    content: "+";
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    margin: 0 0 0 -30px;
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    z-index: 2;
+    background-color: rgba(62, 47, 145, 0.6);
+    font-size: 30px;
+    line-height: 60px;
+    color: #fff;
+}
+a.member:hover .name {
+    color: #281e5e;
+}
+a.member:hover .name i {
+    color: #777;
+}
+.memberstats .value {
+    color: #fff;
+    font-size: 3em;
+}
+.memberstats label {
+    display: inline-block;
+    margin-top: 10px;
+    line-height: 1.2em;
+    vertical-align: top;
+}
+#members_mask {
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#members_mask.isVisible {
+    opacity: 1;
+    pointer-events: all;
+}
+.members {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.members .member {
+    width: 24%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@media only screen and (max-width: 768px) {
+    .members .member {
+        width: 45%;
+    }
+}
+.members .member.isExpanded {
+    z-index: 4;
+}
 
 #agenda {
     background-color: #d6ce75;
@@ -688,7 +910,8 @@ p a:hover {
 
 
 
-#lidmaatschap {
+#lidmaatschap,
+#leden {
     border-top: 1px solid #ccc; /*3e2f91*/
     padding-top: 50px;
 }
@@ -696,21 +919,17 @@ p a:hover {
 #lidmaatschap p {
     margin-bottom: 1em;
 }
-
 #inschrijven {
     background-color: #3e2f91;
 }
-
 #inschrijven h2 {
     text-align: center;
     color: #fff;
 }
-
 #inschrijven p.single {
     color: #9e97c8;
     margin-bottom: 30px;
 }
-
 #inschrijven form {
     color: #fff;
 }
@@ -721,8 +940,14 @@ input[type="text"], input[type="email"], textarea {
     font-size: 1.2em;
     color: #3e2f91;
     min-height: 25px;
+    padding-left: 10px;
 }
-
+input.input-grey {
+    background-color: rgba(62, 47, 145, 0.05);
+}
+input.input-grey:focus {
+    background-color: rgba(62, 47, 145, 0.1);
+}
 input,textarea {
     background-color: rgba(255,255,255,0.75); /* 9e97c8 */
     border: none;

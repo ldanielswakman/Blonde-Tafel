@@ -3,17 +3,18 @@ function scrollActions() {
 	scrollB = $(window).scrollTop() + $(window).height();
 	windowHeight = $(window).height();
 
-	if ($(window).width() < 768) {
+	if ($('#intro').length > 0 && $(window).width() < 768) {
 		$('#intro').css('background-position','0px '+((scroll/2)+82)+'px');
 	}
 
-
-	if (scrollB > ($('.bestuur').offset().top + 100)) {
-		$('.bestuur .boardmember').css('left','0');
+	if ($('.bestuur .boardmember').length > 0) {
+		if (scrollB > ($('.bestuur').offset().top + 100)) {
+			$('.bestuur .boardmember').css('left','0');
+		}
 	}
 
 	if (scroll < 100 && scroll >= 0 && $('.viewport-width-flag').is(':visible')) {
-		$('.home .logo').css('height', (30-scroll/2) + 72);
+		$('.home .logo').css('height', (30-scroll/2) + 60);
 		$('.home nav ul').css('padding-top',(25-scroll/2)+"px");
 	} else if (scroll <= 0 && $('.viewport-width-flag').is(':visible')) {
 		$('.home .logo').css('height', '102px');
@@ -26,6 +27,13 @@ function scrollActions() {
 	if ($(window).width() > 767) {
 		$('nav ul').show();
 	}
+}
+
+function openMemberDetail(member) {
+	// if (member) {
+	// 	member.toggleClass('isExpanded');
+	// 	member.closest('#alle_leden').find('#members_mask').toggleClass('isVisible');
+	// }
 }
 
 $(window).scroll(function() { scrollActions(); });
@@ -54,10 +62,18 @@ $(document).ready(function() {
 		}
 	}));
 
+	// expand section button
+	$('.expand_button').bind('click touchend', (function(e) {
+		e.preventDefault();
+		$(this).closest('section').toggleClass('expanded');
+	}));
+
 	scrollActions();
 
-	$('.bestuur .boardmember:nth-child(1)').css('left',-1000);
-	$('.bestuur .boardmember:nth-child(2)').css('left',-1000);
-	$('.bestuur .boardmember:nth-child(3)').css('left',1000);
-	$('.bestuur .boardmember:nth-child(4)').css('left',1000);
+	if ($('.bestuur .boardmember').length > 0) {
+		$('.bestuur .boardmember:nth-child(1)').css('left',-1000);
+		$('.bestuur .boardmember:nth-child(2)').css('left',-1000);
+		$('.bestuur .boardmember:nth-child(3)').css('left',1000);
+		$('.bestuur .boardmember:nth-child(4)').css('left',1000);
+	}
 });
