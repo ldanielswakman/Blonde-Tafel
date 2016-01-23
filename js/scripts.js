@@ -76,4 +76,74 @@ $(document).ready(function() {
 		$('.bestuur .boardmember:nth-child(3)').css('left',1000);
 		$('.bestuur .boardmember:nth-child(4)').css('left',1000);
 	}
+
+  if($('.members')) {
+    var qsRegex;
+
+    // isotope init
+    var $container = $('.members').isotope({
+      itemSelector: '.member',
+      layoutMode: 'fitRows',
+      sortBy: 'random',
+      getSortData: {
+        name: '.name',
+        title: '.title'
+      },
+      filter: function() {
+        return qsRegex ? $(this).text().match( qsRegex ) : true;
+      }
+    });
+
+    // isotope sorting
+    $('.members-sorting a').bind('click', (function(e) {
+      $('.members-sorting a').removeClass('highlight');
+      $(this).addClass('highlight');
+      $container.isotope({
+        sortBy: $(this).attr('data-sort'),
+        sortAscending: true,
+        filter: function() {
+          return qsRegex ? $(this).text().match( qsRegex ) : true;
+        }
+      });
+    }));
+
+    // ----------- Search FUNCTION --------//
+    // use value of search field to filter
+    var $quicksearch = $('#membersearch').bind('keyup change', (debounce( function() {
+      qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+      $container.isotope();
+      if($quicksearch.val().length > 0) {
+        $quicksearch.addClass('hasContent');
+      } else {
+        $quicksearch.removeClass('hasContent');
+      }
+    })));
+
+    $('#membersearch_clear').bind('click', (function(e) {
+      $('#membersearch').val('');
+      qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+      $container.isotope();
+      if($quicksearch.val().length > 0) {
+        $quicksearch.addClass('hasContent');
+      } else {
+        $quicksearch.removeClass('hasContent');
+      }
+    }));
+
+    // debounce so filtering doesn't happen every millisecond
+    function debounce( fn, threshold ) {
+      var timeout;
+      return function debounced() {
+        if ( timeout ) {
+          clearTimeout( timeout );
+        }
+        function delayed() {
+          fn();
+          timeout = null;
+        }
+        timeout = setTimeout( delayed, threshold || 100 );
+      }
+    }
+  }
+  
 });

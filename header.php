@@ -42,6 +42,7 @@
         <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/jquery.scrollto.js"></script>
 				<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/jquery.flexslider.js"></script>
 				<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/jquery.anchor.js"></script>
+        <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/isotope.pkgd.min.js"></script>
         <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/scripts.js"></script>
 		
 		<script>
