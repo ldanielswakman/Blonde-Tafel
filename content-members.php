@@ -69,13 +69,17 @@
 
           <?php
           foreach ($members as $member) :
-            $img_url = (strlen(wp_get_attachment_image_src( $member->event_image, 'thumbnail')[0]) > 0) ? wp_get_attachment_image_src( $member->event_image, 'thumbnail')[0] : get_bloginfo( 'stylesheet_directory' ) . '/images/fabric.png';
+            if (intval($member->active) != 0) :
+              $img_url = (strlen(wp_get_attachment_image_src( $member->event_image, 'thumbnail')[0]) > 0) ? wp_get_attachment_image_src( $member->event_image, 'thumbnail')[0] : get_bloginfo( 'stylesheet_directory' ) . '/images/fabric.png';
+              ?>
+              <a href="#<?php echo $member->post_name ?>" id="<?php echo $member->post_name ?>" onclick="javascript:openMemberDetail($(this))" class="member u-mt20 u-aligncenter">
+                <img src="<?php echo $img_url ?>" alt="<?php echo $member->post_title ?>" />
+                <span class="name"><?php echo $member->post_title ?></span><span class="title"><?php echo $member->job_title ?></span>
+              </a>
+            <?php 
+            endif;
+          endforeach; 
           ?>
-            <a href="#<?php echo $member->post_name ?>" id="<?php echo $member->post_name ?>" onclick="javascript:openMemberDetail($(this))" class="member u-mt20 u-aligncenter">
-              <img src="<?php echo $img_url ?>" alt="<?php echo $member->post_title ?>" />
-              <span class="name"><?php echo $member->post_title ?></span><span class="title"><?php echo $member->job_title ?></span>
-            </a>
-          <?php endforeach; ?>
 
           </div>
 
