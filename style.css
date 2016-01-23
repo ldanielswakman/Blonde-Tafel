@@ -385,6 +385,7 @@ p a:hover {
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .button-box:hover, a.button-box.highlight {
@@ -398,8 +399,7 @@ p a:hover {
     color: white;
 }
 .button-box:active {
-    left: 1px;
-    top: 1px;
+    top: 2px;
 }
 .button-box.down:after {
     content: "";
@@ -412,6 +412,11 @@ p a:hover {
 }
 .button-box.down:hover:after {
     border-top-color: #7466c4;
+}
+.button-box.button-box-small {
+    margin: 0;
+    margin-right: -6px;
+    padding: 0 8px;
 }
 
 
@@ -622,6 +627,46 @@ a.member:hover .name i {
 #members_mask.isVisible {
     opacity: 1;
     pointer-events: all;
+}
+#membersearch {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#membersearch_clear {
+    position: absolute;
+    top: 0;
+    right: 6px;
+    height: 30px;
+    width: 30px;
+    border-color: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#membersearch_clear:before,
+#membersearch_clear:after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: 13px;
+    height: 16px;
+    border-right: 2px solid #3e2f91;
+    -webkit-transform: rotate(45deg);
+    -webkit-transform-origin: top middle;
+}
+#membersearch_clear:after {
+    -webkit-transform: rotate(-45deg);
+}
+#membersearch_clear:hover:before,
+#membersearch_clear:hover:after {
+    border-right-color: #fff;
+}
+#membersearch + #membersearch_clear {
+    display: none;
+}
+#membersearch.hasContent + #membersearch_clear {
+    display: inline-block;
 }
 .members {
     -webkit-transition: all 0.3s ease;

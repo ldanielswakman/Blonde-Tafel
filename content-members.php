@@ -50,8 +50,17 @@
         if (!empty($members)) :
         ?>
           <div class="container clearfix">
-            <p class="fourcol" style="margin-left: 15%;"><input id="membersearch" type="text" name="q" placeholder="Zoek..." class="input-grey u-mt0 u-mb0"/></p>
-            <p class="sixcol members-sorting"><small>Sorteer op <small><button class="active" data-sort="random">WILLEKEURIG</button> | <button data-sort="name">NAAM</button> | <button data-sort="title">TITEL</button></small></small></p>
+            <p class="fourcol u-relative" style="margin-left: 15%;">
+              <input id="membersearch" type="text" name="q" placeholder="Zoek..." class="input-grey u-mt0 u-mb0"/>
+              <a id="membersearch_clear" class="button-box button-box-small"></a>
+            </p>
+            <p class="sixcol members-sorting">
+              <small>Sorteer op 
+                <a class="button-box button-box-small highlight" data-sort="random">WILLEKEURIG</a>
+                <a class="button-box button-box-small" data-sort="name">NAAM</a>
+                <a class="button-box button-box-small" data-sort="title">TITEL</a>
+              </small>
+            </p>
             <!-- <p class="fourcol"><small>Filter <small><button class="active">ALLE</button> | <button>ACTIEF</button> | <button>NIET ACTIEF</button></small></small></p> -->
             <!-- <p class="fourcol members-layout"><small>Toon als <small><button class="active" data-layout="fitRows">GRID</button> | <button data-layout="vertical">LIJST</button></small></small></p> -->
           </div>
@@ -72,43 +81,58 @@
 
           <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/isotope.pkgd.min.js"></script>
           <script>
+            var qsRegex;
+
             // isotope init
-            $('.members').isotope({
+            var $container = $('.members').isotope({
               itemSelector: '.member',
               layoutMode: 'fitRows',
               sortBy: 'random',
               getSortData: {
                 name: '.name',
                 title: '.title'
+              },
+              filter: function() {
+                return qsRegex ? $(this).text().match( qsRegex ) : true;
               }
             });
 
             // isotope sorting
-            $('.members-sorting button').bind('click', (function(e) {
-              $('.members').isotope({
+            $('.members-sorting a').bind('click', (function(e) {
+              $('.members-sorting a').removeClass('highlight');
+              $(this).addClass('highlight');
+              $container.isotope({
                 sortBy: $(this).attr('data-sort'),
-                sortAscending: true
-              });
-            }));
-
-            //isotope search
-            $( function() {
-              // quick search regex
-              var qsRegex;
-              // init Isotope
-              var $container = $('.members').isotope({
+                sortAscending: true,
                 filter: function() {
                   return qsRegex ? $(this).text().match( qsRegex ) : true;
                 }
               });
-              // use value of search field to filter
-              var $quicksearch = $('#membersearch').keyup( debounce( function() {
-                qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-                $container.isotope();
-                $searchBarClass = ($quicksearch.val().length > 0) ? 'hasContent' : '';
-                $quicksearch.addClass($searchBarClass);
-              }, 200 ) );
-            });
+            }));
+
+            // ----------- Search FUNCTION --------//
+            // use value of search field to filter
+            var $quicksearch = $('#membersearch').bind('keyup change', (debounce( function() {
+              qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+              $container.isotope();
+              if($quicksearch.val().length > 0) {
+                $quicksearch.addClass('hasContent');
+              } else {
+                $quicksearch.removeClass('hasContent');
+              }
+            })));
+
+            $('#membersearch_clear').bind('click', (function(e) {
+              $('#membersearch').val('');
+              qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+              $container.isotope();
+              if($quicksearch.val().length > 0) {
+                $quicksearch.addClass('hasContent');
+              } else {
+                $quicksearch.removeClass('hasContent');
+              }
+            }));
+
             // debounce so filtering doesn't happen every millisecond
             function debounce( fn, threshold ) {
               var timeout;
