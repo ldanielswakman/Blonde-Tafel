@@ -89,27 +89,27 @@ function members_statistics( $atts ) {
   // build html
   $html = '';
   if ($count > 0) {
-    $html .= '<div class="memberstats container twelvecol clearfix u-aligncenter u-mt50 u-mb20">';
+    $html .= '<div class="memberstats container twelvecol clearfix u-aligncenter u-mt20 u-mb20">';
     if ($atts['ledenaantal'] != 'nee') {
-      $html .= '<div class="' . $colsize . '">';
+      $html .= '<div class="' . $colsize . ' u-pv20">';
       $html .= '<div class="value">' . $member_active_count . '</div>';
       $html .= '<p><label>actieve leden</label></p>';
       $html .= '</div>';
     }
     if ($atts['leeftijd'] != 'nee') {
-      $html .= '<div class="' . $colsize . '">';
+      $html .= '<div class="' . $colsize . ' u-pv20">';
       $html .= '<div class="value">' . calcAvgDate($member_ages) . '</div>';
       $html .= '<p><label>gemiddelde leeftijd</label></p>';
       $html .= '</div>';
     }
     if ($atts['beroepen'] != 'nee') {
-      $html .= '<div class="' . $colsize . '">';
+      $html .= '<div class="' . $colsize . ' u-pv20">';
       $html .= '<div class="value">' . count($member_titles) . '</div>';
       $html .= '<p><label>verschillende beroepen</label></p>';
       $html .= '</div>';
     }
     if ($atts['lidtijd'] != 'nee') {
-      $html .= '<div class="' . $colsize . '">';
+      $html .= '<div class="' . $colsize . ' u-pv20">';
       $html .= '<div class="value">' . calcAvgDate($member_joindates) . '</div>';
       $html .= '<p><label>gemiddeld aantal jaren lid</label></p>';
       $html .= '</div>';

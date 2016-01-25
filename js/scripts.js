@@ -123,11 +123,7 @@ $(document).ready(function() {
       $('#membersearch').val('');
       qsRegex = new RegExp( $quicksearch.val(), 'gi' );
       $container.isotope();
-      if($quicksearch.val().length > 0) {
-        $quicksearch.addClass('hasContent');
-      } else {
-        $quicksearch.removeClass('hasContent');
-      }
+      $quicksearch.removeClass('hasContent');
     }));
 
     // debounce so filtering doesn't happen every millisecond

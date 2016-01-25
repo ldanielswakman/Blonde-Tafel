@@ -84,6 +84,9 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
 .u-mt0 {
     margin-top: 0 !important;
 }
+.u-mt10 {
+    margin-top: 20px !important;
+}
 .u-mt20 {
     margin-top: 20px !important;
 }
@@ -107,6 +110,9 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
 }
 .u-pb50 {
     padding-bottom: 50px !important;
+}
+.u-pv20 {
+    padding-top: 20px !important;
 }
 .u-block {
     display: block !important;
@@ -200,6 +206,9 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
+}
+.container .container {
+    padding: 0;
 }
 
 .clearfloat {
@@ -610,6 +619,7 @@ a.member:hover .name i {
 .memberstats .value {
     color: #fff;
     font-size: 3em;
+    line-height: 1em;
 }
 .memberstats label {
     display: inline-block;
@@ -1145,8 +1155,12 @@ input[type="submit"]:hover {
 }
 .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol {
   margin-right: 3.8%;
+  display: inline-block;
   float: left;
   min-height: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .onecol:last-child, .twocol:last-child, .threecol:last-child, .fourcol:last-child, .fivecol:last-child, .sixcol:last-child, .sevencol:last-child, .eightcol:last-child, .ninecol:last-child, .tencol:last-child, .elevencol:last-child, .last {
   margin-right: 0;
