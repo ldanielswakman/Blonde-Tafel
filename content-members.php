@@ -30,13 +30,12 @@
 
       <section id="alle_leden" class="u-relative u-mt50">
 
-        <div id="members_mask" class="u-pincover bg-white u-z3">
+        <a href="javascript:toggleMemberDetail()" id="members_mask" class="u-pincover bg-white u-z3 isVisible">
           <div class="container clearfix u-aligncenter">
             <div class="twelvecol">
-              testing
             </div>
           </div>
-        </div>
+        </a>
 
         <?php
         $members = get_posts(array(
@@ -70,12 +69,34 @@
           <?php
           foreach ($members as $member) :
             if (intval($member->active) != 0) :
-              $img_url = (strlen(wp_get_attachment_image_src( $member->event_image, 'thumbnail')[0]) > 0) ? wp_get_attachment_image_src( $member->event_image, 'thumbnail')[0] : get_bloginfo( 'stylesheet_directory' ) . '/images/fabric.png';
+              $img_obj = wp_get_attachment_image_src( $member->event_image, 'thumbnail');
+              $img_url = (strlen($img_obj[0]) > 0) ? $img_obj[0] : get_bloginfo( 'stylesheet_directory' ) . '/images/fabric.png';
               ?>
-              <a href="#<?php echo $member->post_name ?>" id="<?php echo $member->post_name ?>" onclick="javascript:openMemberDetail($(this))" class="member u-mt20 u-aligncenter">
+              <div href="#<?php echo $member->post_name ?>" id="<?php echo $member->post_name ?>" onclick="javascript:toggleMemberDetail($(this))" class="member u-mt20 u-aligncenter">
                 <img src="<?php echo $img_url ?>" alt="<?php echo $member->post_title ?>" />
                 <span class="name"><?php echo $member->post_title ?></span><span class="title"><?php echo $member->job_title ?></span>
-              </a>
+
+                <div class="member__details">
+                  <div class="container twelvecol u-mt10">
+                    <div class="threecol"></div>
+                    <div class="sixcol">
+                      <?php if(count($member->linkedin_url) > 0 && substr($member->linkedin_url,0,4) === "http") { ?>
+                        <a href="<?php echo $member->linkedin_url ?>" target="_blank" class="member__meta u-mh5">Linkedin</a>
+                      <?php } if(count($member->linkedin_url) > 0 && substr($member->linkedin_url,0,4) === "http") { ?>
+                        <a href="<?php echo $member->twitter_url ?>" target="_blank" class="member__meta u-mh5">Twitter</a>
+                      <?php } ?>
+                    </div>
+                    <div class="threecol"></div>
+                  </div>
+                  <div class="container twelvecol u-mt20">
+                    <div class="threecol"></div>
+                    <div class="sixcol u-alignleft">
+                      <?php echo wpautop($member->bio) ?>
+                    </div>
+                    <div class="threecol"></div>
+                  </div>
+                </div>
+              </div>
             <?php 
             endif;
           endforeach; 

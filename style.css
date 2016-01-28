@@ -85,7 +85,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
     margin-top: 0 !important;
 }
 .u-mt10 {
-    margin-top: 20px !important;
+    margin-top: 10px !important;
 }
 .u-mt20 {
     margin-top: 20px !important;
@@ -104,6 +104,13 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
 }
 .u-mr10 {
     margin-right: 10px !important;
+}
+.u-mh5 {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+.u-pt50 {
+    padding-top: 50px !important;
 }
 .u-pt100 {
     padding-top: 100px !important;
@@ -185,6 +192,9 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
 }
 .c-white {
     color: #fff;
+}
+.c-light {
+    color: #ccc !important;
 }
 
 
@@ -396,12 +406,10 @@ p a:hover {
     text-decoration: none;
     cursor: pointer;
 }
-
 .button-box:hover, a.button-box.highlight {
     background-color: #3e2f91;
     color: white;
 }
-
 .button-box.highlight:hover {
     background-color: #7466c4;
     border-color: #7466c4;
@@ -427,7 +435,14 @@ p a:hover {
     margin-right: -6px;
     padding: 0 8px;
 }
-
+.button-box.button-box-white {
+    border-color: #fff;
+    color: #fff;
+}
+.button-box.button-box-white:hover {
+    background-color: #fff;
+    color: #3e2f91;
+}
 
 
 
@@ -539,6 +554,7 @@ p a:hover {
     max-width: 100%;
     padding: 20px;
     line-height: 1.4em;
+    cursor: pointer;
 }
 .member:hover {
 }
@@ -589,11 +605,11 @@ p a:hover {
 .member-small .name {
     margin-top: 18px;
 }
-a.member img {
+.member img {
     position: relative;
     display: inline-block;
 }
-a.member:hover:before {
+.member:hover:before {
     content: "+";
     position: absolute;
     top: 55px;
@@ -610,10 +626,10 @@ a.member:hover:before {
     line-height: 60px;
     color: #fff;
 }
-a.member:hover .name {
+.member:hover .name {
     color: #281e5e;
 }
-a.member:hover .name i {
+.member:hover .name i {
     color: #777;
 }
 .memberstats .value {
@@ -635,7 +651,7 @@ a.member:hover .name i {
     transition: all 0.3s ease;
 }
 #members_mask.isVisible {
-    opacity: 1;
+    opacity: 0.95;
     pointer-events: all;
 }
 #membersearch {
@@ -688,14 +704,71 @@ a.member:hover .name i {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 @media only screen and (max-width: 768px) {
     .members .member {
         width: 45%;
     }
 }
+.members .member:after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 20px;
+    margin-right: 60px;
+    font-size: 50px;
+    color: #eee;
+    opacity: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.members .member .name,
+.members .member .title {
+    opacity: 1;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.members .member .member__details {
+    display: none;
+}
+.members .member .member__meta {
+    color: #ccc;
+}
+.members .member .member__meta:hover {
+    color: #3e2f91;
+}
+.members .member .member__details p {
+    color: #777;
+    line-height: 1.8em;
+}
 .members .member.isExpanded {
+    width: 100%;
     z-index: 4;
+}
+.members .member.isExpanded:before {
+    display: none;
+}
+.members .member.isExpanded:after {
+    opacity: 1;
+}
+.members .member.isExpanded .name,
+.members .member.isExpanded .title {
+    /*opacity: 0;*/
+}
+.members .member.isExpanded img {
+    border-color: rgba(62, 47, 145, 1);
+}
+.members .member.isExpanded .member__details {
+    display: block;
 }
 
 #agenda {

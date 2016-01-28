@@ -29,11 +29,16 @@ function scrollActions() {
 	}
 }
 
-function openMemberDetail(member) {
-	// if (member) {
-	// 	member.toggleClass('isExpanded');
-	// 	member.closest('#alle_leden').find('#members_mask').toggleClass('isVisible');
-	// }
+function toggleMemberDetail(member) {
+  $('#members_mask').toggleClass('isVisible');
+  if (typeof member === 'undefined') {
+    $('.member').removeClass('isExpanded').css('transform', '');
+  }
+	if (member) {
+		member.toggleClass('isExpanded');
+    $offset = member.offset().left - member.closest('#alle_leden .container').offset().left - 20;
+    member.css('transform', 'translateX(-' + $offset + 'px)');
+	}
 }
 
 $(window).scroll(function() { scrollActions(); });
@@ -77,11 +82,11 @@ $(document).ready(function() {
 		$('.bestuur .boardmember:nth-child(4)').css('left',1000);
 	}
 
-  if($('.members')) {
+  if($('.members') && $('.member').length > 0) {
     var qsRegex;
 
     // isotope init
-    var $container = $('.members').isotope({
+    $container = $('.members').isotope({
       itemSelector: '.member',
       layoutMode: 'fitRows',
       sortBy: 'random',
@@ -93,6 +98,14 @@ $(document).ready(function() {
         return qsRegex ? $(this).text().match( qsRegex ) : true;
       }
     });
+
+    setTimeout(function() {
+      $('#members_mask').removeClass('isVisible');
+      if($(window.location.hash).length > 0) {
+        $(window.location.hash).ScrollTo({offsetTop: $('header').outerHeight() });
+        toggleMemberDetail($(window.location.hash));
+      }
+    }, 500);
 
     // isotope sorting
     $('.members-sorting a').bind('click', (function(e) {

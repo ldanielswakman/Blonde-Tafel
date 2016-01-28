@@ -15,7 +15,8 @@ function members_preview( $atts ) {
   $html .='<div class="bestuur container clearfix u-aligncenter">';
   foreach ($members as $member) :
     $html .= '<div class="member member-small fourcol u-mt20">';
-    $img_url = (strlen(wp_get_attachment_image_src( $member->event_image, 'thumbnail')[0]) > 0) ? wp_get_attachment_image_src( $member->event_image, 'thumbnail')[0] : get_bloginfo( 'stylesheet_directory' ) . '/images/fabric.png';
+    $img_obj = wp_get_attachment_image_src( $member->event_image, 'thumbnail');
+    $img_url = (strlen($img_obj[0]) > 0) ? $img_obj[0] : get_bloginfo( 'stylesheet_directory' ) . '/images/fabric.png';
     $html .= '<img src="' . $img_url . '" alt="' . $member->post_title  . '" />';
     $html .= '<span class="name">' . $member->post_title . '<br /><small><i>' . $member->job_title . '</i></small></span>';
     $html .= '</div>';
@@ -89,27 +90,27 @@ function members_statistics( $atts ) {
   // build html
   $html = '';
   if ($count > 0) {
-    $html .= '<div class="memberstats container twelvecol clearfix u-aligncenter u-mt20 u-mb20">';
+    $html .= '<div class="memberstats container twelvecol clearfix u-aligncenter u-mt50 u-mb20">';
     if ($atts['ledenaantal'] != 'nee') {
-      $html .= '<div class="' . $colsize . ' u-pv20">';
+      $html .= '<div class="' . $colsize . ' u-pv10">';
       $html .= '<div class="value">' . $member_active_count . '</div>';
       $html .= '<p><label>actieve leden</label></p>';
       $html .= '</div>';
     }
     if ($atts['leeftijd'] != 'nee') {
-      $html .= '<div class="' . $colsize . ' u-pv20">';
+      $html .= '<div class="' . $colsize . ' u-pv10">';
       $html .= '<div class="value">' . calcAvgDate($member_ages) . '</div>';
       $html .= '<p><label>gemiddelde leeftijd</label></p>';
       $html .= '</div>';
     }
     if ($atts['beroepen'] != 'nee') {
-      $html .= '<div class="' . $colsize . ' u-pv20">';
+      $html .= '<div class="' . $colsize . ' u-pv10">';
       $html .= '<div class="value">' . count($member_titles) . '</div>';
       $html .= '<p><label>verschillende beroepen</label></p>';
       $html .= '</div>';
     }
     if ($atts['lidtijd'] != 'nee') {
-      $html .= '<div class="' . $colsize . ' u-pv20">';
+      $html .= '<div class="' . $colsize . ' u-pv10">';
       $html .= '<div class="value">' . calcAvgDate($member_joindates) . '</div>';
       $html .= '<p><label>gemiddeld aantal jaren lid</label></p>';
       $html .= '</div>';
