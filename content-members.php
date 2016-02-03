@@ -60,8 +60,10 @@
                 <a class="button-box button-box-small" data-sort="title">TITEL</a>
               </small>
             </p>
-            <!-- <p class="fourcol"><small>Filter <small><button class="active">ALLE</button> | <button>ACTIEF</button> | <button>NIET ACTIEF</button></small></small></p> -->
-            <!-- <p class="fourcol members-layout"><small>Toon als <small><button class="active" data-layout="fitRows">GRID</button> | <button data-layout="vertical">LIJST</button></small></small></p> -->
+            <?php 
+            // <p class="fourcol"><small>Filter <small><button class="active">ALLE</button> | <button>ACTIEF</button> | <button>NIET ACTIEF</button></small></small></p>
+            // <p class="fourcol members-layout"><small>Toon als <small><button class="active" data-layout="fitRows">GRID</button> | <button data-layout="vertical">LIJST</button></small></small></p>
+            ?>
           </div>
       
           <div class="members container clearfix u-aligncenter">

@@ -70,6 +70,8 @@ function members_statistics( $atts ) {
   $member_joindates = array();
   $member_active_count = 0;
   $member_titles = array();
+  $minJoinDate = 2008;
+  
   foreach ($members as $member) {
     if (intval($member->active) != 0) {
       $member_active_count += intval($member->active);
@@ -78,8 +80,8 @@ function members_statistics( $atts ) {
         $member_ages[] = strtotime($member->birthdate);
       }
       // if a join date is set & produces valid output, add to average queue
-      if (strlen($member->join_date) > 0 && date("d/m/Y", strtotime($member->join_date)) != '01/01/1970') { 
-        $member_joindates[] = strtotime($member->join_date);
+      if (strlen($member->join_date) > 0 && intval($member->join_date) > $minJoinDate) {
+        $member_joindates[] = strtotime("01-01-" . intval($member->join_date));
       }
       if (strlen($member->job_title) > 0 && !in_array($member->job_title, $member_titles)) {
         $member_titles[] = $member->job_title;
