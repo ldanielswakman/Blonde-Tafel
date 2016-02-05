@@ -554,7 +554,6 @@ p a:hover {
     max-width: 100%;
     padding: 20px;
     line-height: 1.4em;
-    cursor: pointer;
 }
 .member:hover {
 }
@@ -609,7 +608,10 @@ p a:hover {
     position: relative;
     display: inline-block;
 }
-.member:hover:before {
+.member.member-detail {
+    cursor: pointer;
+}
+.member.member-detail:hover:before {
     content: "+";
     position: absolute;
     top: 55px;
@@ -626,10 +628,10 @@ p a:hover {
     line-height: 60px;
     color: #fff;
 }
-.member:hover .name {
+.member.member-detail:hover .name {
     color: #281e5e;
 }
-.member:hover .name i {
+.member.member-detail:hover .name i {
     color: #777;
 }
 .memberstats .value {

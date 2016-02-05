@@ -74,7 +74,7 @@
               $img_obj = wp_get_attachment_image_src( $member->event_image, 'thumbnail');
               $img_url = (strlen($img_obj[0]) > 0) ? $img_obj[0] : get_bloginfo( 'stylesheet_directory' ) . '/images/fabric.png';
               ?>
-              <div href="#<?php echo $member->post_name ?>" id="<?php echo $member->post_name ?>" onclick="javascript:toggleMemberDetail($(this))" class="member u-mt20 u-aligncenter">
+              <div href="#<?php echo $member->post_name ?>" id="<?php echo $member->post_name ?>" onclick="javascript:toggleMemberDetail($(this))" class="member member-detail u-mt20 u-aligncenter">
                 <img src="<?php echo $img_url ?>" alt="<?php echo $member->post_title ?>" />
                 <span class="name"><?php echo $member->post_title ?></span><span class="title"><?php echo $member->job_title ?></span>
 
