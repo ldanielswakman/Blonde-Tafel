@@ -84,7 +84,7 @@
                     <div class="sixcol">
                       <?php if(count($member->linkedin_url) > 0 && substr($member->linkedin_url,0,4) === "http") { ?>
                         <a href="<?php echo $member->linkedin_url ?>" target="_blank" class="member__meta u-mh5">Linkedin</a>
-                      <?php } if(count($member->linkedin_url) > 0 && substr($member->linkedin_url,0,4) === "http") { ?>
+                      <?php } if(count($member->twitter_url) > 0 && substr($member->twitter_url,0,4) === "http") { ?>
                         <a href="<?php echo $member->twitter_url ?>" target="_blank" class="member__meta u-mh5">Twitter</a>
                       <?php } ?>
                     </div>

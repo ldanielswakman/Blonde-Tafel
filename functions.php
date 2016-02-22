@@ -114,7 +114,7 @@ function members_statistics( $atts ) {
     if ($atts['lidtijd'] != 'nee') {
       $html .= '<div class="' . $colsize . ' u-pv10">';
       $html .= '<div class="value">' . calcAvgDate($member_joindates) . '</div>';
-      $html .= '<p><label>gemiddeld aantal jaren lid</label></p>';
+      $html .= '<p><label>gemiddeld aantal jaren lid<br /><small style="opacity: 0.75;"><em>sinds oprichting 2008</em></small></label></p>';
       $html .= '</div>';
     }
     $html .= '</div>';
