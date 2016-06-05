@@ -74,18 +74,24 @@ function members_statistics( $atts ) {
   
   foreach ($members as $member) {
     if (intval($member->active) != 0) {
+
+      // currrently unused, count($members) now displays total
       $member_active_count += intval($member->active);
+
       // if a birth date is set & produces valid output, add to average queue
       if (strlen($member->birthdate) > 0 && date("d/m/Y", strtotime($member->birthdate)) != '01/01/1970') { 
         $member_ages[] = strtotime($member->birthdate);
       }
+
       // if a join date is set & produces valid output, add to average queue
       if (strlen($member->join_date) > 0 && intval($member->join_date) > $minJoinDate) {
         $member_joindates[] = strtotime("01-01-" . intval($member->join_date));
       }
+
       if (strlen($member->job_title) > 0 && !in_array($member->job_title, $member_titles)) {
         $member_titles[] = $member->job_title;
       }
+
     }
   }
 
@@ -95,7 +101,7 @@ function members_statistics( $atts ) {
     $html .= '<div class="memberstats container twelvecol clearfix u-aligncenter u-mt50 u-mb20">';
     if ($atts['ledenaantal'] != 'nee') {
       $html .= '<div class="' . $colsize . ' u-pv10">';
-      $html .= '<div class="value">' . $member_active_count . '</div>';
+      $html .= '<div class="value">' . count($members) . '</div>';
       $html .= '<p><label>actieve leden</label></p>';
       $html .= '</div>';
     }
