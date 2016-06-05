@@ -754,6 +754,14 @@ p a:hover {
     color: #777;
     line-height: 1.8em;
 }
+.members .member img {
+    -webkit-transform-origin: center bottom;
+    -moz-transform-origin: center bottom;
+    transform-origin: center bottom;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
 .members .member.isExpanded {
     width: 100%;
     z-index: 4;
@@ -770,6 +778,9 @@ p a:hover {
 }
 .members .member.isExpanded img {
     border-color: rgba(62, 47, 145, 1);
+    -webkit-transform: scale(1.18);
+    -moz-transform: scale(1.18);
+    transform: scale(1.18);
 }
 .members .member.isExpanded .member__details {
     display: block;

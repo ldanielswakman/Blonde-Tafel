@@ -88,12 +88,12 @@
 
                       <div class="u-mt10">
                         <?php if(count($member->linkedin_url) > 0 && substr($member->linkedin_url,0,4) === "http") { ?>
-                          <a href="<?php echo $member->linkedin_url ?>" target="_blank" class="member__meta u-mh5">Linkedin</a>
+                          <a href="<?php echo $member->linkedin_url ?>" target="_blank" class="member__meta u-mh5"><span style="font-size: 1.5em; display: block;">&#8599;</span>Linkedin</a>
                         <?php } if(count($member->twitter_url) > 0 && substr($member->twitter_url,0,4) === "http") { ?>
-                          <a href="<?php echo $member->twitter_url ?>" target="_blank" class="member__meta u-mh5">Twitter</a>
+                          <a href="<?php echo $member->twitter_url ?>" target="_blank" class="member__meta u-mh5"><span style="font-size: 1.5em; display: block;">&#8599;</span>Twitter</a>
                         <?php } ?>
                       </div>
-                      
+
                     </div>
                     <div class="threecol"></div>
                   </div>

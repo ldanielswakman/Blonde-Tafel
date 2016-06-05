@@ -100,6 +100,8 @@ $(document).ready(function() {
     });
 
     setTimeout(function() { $container.isotope({ layoutMode: 'fitRows' }) }, 300);
+    setTimeout(function() { $container.isotope({ layoutMode: 'fitRows' }) }, 600);
+    setTimeout(function() { $container.isotope({ layoutMode: 'fitRows' }) }, 900);
 
     setTimeout(function() {
       $('#members_mask').removeClass('isVisible');
