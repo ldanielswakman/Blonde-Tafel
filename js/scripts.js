@@ -99,6 +99,8 @@ $(document).ready(function() {
       }
     });
 
+    setTimeout(function() { $container.isotope({ layoutMode: 'fitRows' }) }, 300);
+
     setTimeout(function() {
       $('#members_mask').removeClass('isVisible');
       if($(window.location.hash).length > 0) {

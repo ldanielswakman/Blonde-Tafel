@@ -60,10 +60,6 @@
                 <a class="button-box button-box-small" data-sort="title">TITEL</a>
               </small>
             </p>
-            <?php 
-            // <p class="fourcol"><small>Filter <small><button class="active">ALLE</button> | <button>ACTIEF</button> | <button>NIET ACTIEF</button></small></small></p>
-            // <p class="fourcol members-layout"><small>Toon als <small><button class="active" data-layout="fitRows">GRID</button> | <button data-layout="vertical">LIJST</button></small></small></p>
-            ?>
           </div>
       
           <div class="members container clearfix u-aligncenter">
@@ -76,7 +72,11 @@
               ?>
               <div href="#<?php echo $member->post_name ?>" id="<?php echo $member->post_name ?>" onclick="javascript:toggleMemberDetail($(this))" class="member member-detail u-mt20 u-aligncenter">
                 <img src="<?php echo $img_url ?>" alt="<?php echo $member->post_title ?>" />
-                <span class="name"><?php echo $member->post_title ?></span><span class="title"><?php echo $member->job_title ?></span>
+                <span class="name"><?php echo $member->post_title ?></span>
+                <span class="title">
+                  <?php echo $member->job_title ?><br>
+                  <small>(<?php echo $member->employer ?>)</small>
+                </span>
 
                 <div class="member__details">
                   <div class="container twelvecol u-mt10">
