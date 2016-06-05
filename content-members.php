@@ -73,20 +73,27 @@
               <div href="#<?php echo $member->post_name ?>" id="<?php echo $member->post_name ?>" onclick="javascript:toggleMemberDetail($(this))" class="member member-detail u-mt20 u-aligncenter">
                 <img src="<?php echo $img_url ?>" alt="<?php echo $member->post_title ?>" />
                 <span class="name"><?php echo $member->post_title ?></span>
-                <span class="title">
-                  <?php echo $member->job_title ?><br>
-                  <small>(<?php echo $member->employer ?>)</small>
-                </span>
 
                 <div class="member__details">
-                  <div class="container twelvecol u-mt10">
+                  <div class="container twelvecol">
                     <div class="threecol"></div>
                     <div class="sixcol">
-                      <?php if(count($member->linkedin_url) > 0 && substr($member->linkedin_url,0,4) === "http") { ?>
-                        <a href="<?php echo $member->linkedin_url ?>" target="_blank" class="member__meta u-mh5">Linkedin</a>
-                      <?php } if(count($member->twitter_url) > 0 && substr($member->twitter_url,0,4) === "http") { ?>
-                        <a href="<?php echo $member->twitter_url ?>" target="_blank" class="member__meta u-mh5">Twitter</a>
-                      <?php } ?>
+
+                      <span class="title">
+                        <?php echo $member->job_title ?>
+                      </span>
+                      <?php if (strlen($member->employer) > 1): ?>
+                        <small class="employer">(<?php echo $member->employer ?>)</small>
+                      <?php endif ?>
+
+                      <div class="u-mt10">
+                        <?php if(count($member->linkedin_url) > 0 && substr($member->linkedin_url,0,4) === "http") { ?>
+                          <a href="<?php echo $member->linkedin_url ?>" target="_blank" class="member__meta u-mh5">Linkedin</a>
+                        <?php } if(count($member->twitter_url) > 0 && substr($member->twitter_url,0,4) === "http") { ?>
+                          <a href="<?php echo $member->twitter_url ?>" target="_blank" class="member__meta u-mh5">Twitter</a>
+                        <?php } ?>
+                      </div>
+                      
                     </div>
                     <div class="threecol"></div>
                   </div>

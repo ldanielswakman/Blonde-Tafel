@@ -573,7 +573,8 @@ p a:hover {
 .member:focus img {
     border-color: rgba(62, 47, 145, 1);
 }
-.member .title {
+.member .title,
+.member .employer {
     color: #aaa;
 }
 .member .name {
@@ -581,7 +582,8 @@ p a:hover {
     margin-top: 5px;
 }
 .member .name,
-.member .title {
+.member .title,
+.member .company {
     display: block;
     max-width: 100%;
     overflow: hidden;
