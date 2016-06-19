@@ -714,7 +714,7 @@ p a:hover {
 }
 @media only screen and (max-width: 768px) {
     .members .member {
-        width: 45%;
+        width: 44%;
     }
 }
 .members .member:after {
