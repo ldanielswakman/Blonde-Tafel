@@ -33,11 +33,13 @@ function toggleMemberDetail(member) {
   $('#members_mask').toggleClass('isVisible');
   if (typeof member === 'undefined') {
     $('.member').removeClass('isExpanded').css('transform', '');
+    $('.members').css('padding-bottom', 0);
   }
 	if (member) {
-		member.toggleClass('isExpanded');
+    member.toggleClass('isExpanded');
     $offset = member.offset().left - member.closest('#alle_leden .container').offset().left - 20;
     member.css('transform', 'translateX(-' + $offset + 'px)');
+    $('.members').css('padding-bottom', (member.outerHeight() - 200));
 	}
 }
 
